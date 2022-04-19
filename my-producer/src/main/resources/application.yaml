@@ -1,0 +1,17 @@
+server:
+  port: 8001
+
+rocketmq:
+  name-server: 47.96.111.179:9876 #如果是集群，则用分号分割。192.168.40.128:9876;192.168.40.129:9876;192.168.40.130:9876
+  producer:
+    group: qiuguan_pg  #指定组名称
+    retry-times-when-send-failed: 2  #当同步发送失败，重试次数，默认是2
+    send-message-timeout: 5000 #默认是3000ms
+    retry-times-when-send-async-failed: 2  #当异步发送失败，重试次数，默认是2
+    enable-msg-trace: true #是否开启消息轨迹功能，参考 https://github.com/apache/rocketmq/blob/master/docs/cn/msg_trace/user_guide.md
+    customized-trace-topic: RMQ_SYS_TRACE_TOPIC #自定义消息轨迹的Topic。默认为RMQ_SYS_TRACE_TOPIC
+    retry-next-server: true #发送消息给broker时，如果发送失败，是否重试另外一台broker。默认为false
+    max-message-size: 4194304 #消息体的最大允许大小。默认为4 * 1024 * 1024 = 4M
+    compress-message-body-threshold: 4096 #消息压缩阀值，当消息体的大小超过该阀值后，进行消息压缩。默认为 4 * 1024B = 4K
+    #access-key: 参考 https://github.com/apache/rocketmq/blob/master/docs/cn/acl/user_guide.md
+    #secret-key:

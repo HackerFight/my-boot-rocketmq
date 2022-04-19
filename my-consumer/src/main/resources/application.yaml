@@ -1,0 +1,10 @@
+server:
+  port: 8002
+
+
+rocketmq:
+  name-server: 47.96.111.179:9876
+  consumer:
+    listeners:
+      qiuguan_cg:   #消费者组
+        qiuguan_topic: false # key:topic, value:true/false, false表示关闭对qiuguan_topic的监听，默认不配置，表示监听

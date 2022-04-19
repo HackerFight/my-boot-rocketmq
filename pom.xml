@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.5.RELEASE</version>
+    </parent>
+
+    <groupId>com.qiuguan</groupId>
+    <artifactId>my-boot-rocketmq</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>2.2.5.RELEASE</version>
+            </dependency>
+
+
+            <!--
+             rocketmq-spring-boot-starter:version = 2.2.0
+             rocket-client:version=4.8.0
+
+             rocketmq-spring-boot-starter:version = 2.2.2
+             rocket-client:version=4.9.3
+
+             rocketmq-spring-boot-starter:version = 2.2.1
+             rocket-client:version=4.9.1
+
+
+             注意：版本选择，要与rocketmq 服务端尽量保持一致
+             我服务端安装的是4.9.0
+
+            -->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>2.2.1</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.22</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <modules>
+        <module>my-producer</module>
+        <module>my-consumer</module>
+        <module>my-util</module>
+    </modules>
+
+
+</project>
